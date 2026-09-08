@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Tugas 1.7 - Sakelar Toggle Latching ESP32",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 102.2,
+      "left": 182.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_pulldown",
+      "top": 170,
+      "left": 100,
+      "rotate": 90,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -40, "left": 180, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_led",
+      "top": 30,
+      "left": 100,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "btn1:1.L", "red", [ "v0" ] ],
+    [ "btn1:2.L", "esp:4", "green", [ "v0" ] ],
+    [ "btn1:2.L", "r_pulldown:1", "green", [ "v0" ] ],
+    [ "r_pulldown:2", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:5", "r_led:1", "magenta", [ "v0" ] ],
+    [ "r_led:2", "led1:A", "blue", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

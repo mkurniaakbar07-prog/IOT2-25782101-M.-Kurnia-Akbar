@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Praktikum Digital Output",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 60,
+      "left": 230,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 50,
+      "left": 350,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:D5", "led1:A", "magenta", [ "h0" ] ],
+    [ "led1:C", "r1:2", "blue", [ "h0" ] ],
+    [ "r1:1", "esp:GND.1", "black", [ "v80", "h-220" ] ]
+  ]
+}
